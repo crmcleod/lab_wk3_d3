@@ -13,5 +13,5 @@ class SqlRunnerequire
         end
         return result
     end
-    
+
 end
