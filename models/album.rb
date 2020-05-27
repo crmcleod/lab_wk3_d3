@@ -28,6 +28,21 @@ class Album
         @id = SqlRunner.run(sql, values)[0]['id'].to_i
     end
 
+    def update()
+        sql = "
+        UPDATE albums
+        SET
+        (
+        artist_id,
+        title,
+        genre
+        ) = 
+        ($1, $2, $3)
+        WHERE id = $4"
+        values = [@artist_id, @title, @genre, @id]
+        SqlRunner.run(sql, values)
+    end
+
     def self.all
         sql = "SELECT * FROM albums"
         album_hashes = SqlRunner.run(sql) 
