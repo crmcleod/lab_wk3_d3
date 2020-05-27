@@ -1,7 +1,7 @@
 require('pg')
 
 
-class SqlRunnerequire
+class SqlRunner
 
     def self.run(sql, values = [])
         begin 

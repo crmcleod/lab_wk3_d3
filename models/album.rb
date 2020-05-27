@@ -14,4 +14,9 @@ class Album
         @artist_id = options['artist_id'].to_i
     end
 
+    def self.delete_all()
+        sql = "DELETE FROM albums"
+        SqlRunner.run(sql)
+    end
+
 end

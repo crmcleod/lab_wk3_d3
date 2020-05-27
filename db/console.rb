@@ -9,7 +9,7 @@ artist1 = Artist.new({
     "name" => "Abba"
 })
 
-artist.save()
+artist1.save()
 
 album1 = Album.new({
     "title" => "Ring Ring",
