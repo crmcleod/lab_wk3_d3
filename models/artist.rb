@@ -23,6 +23,13 @@ class Artist
         @id = id_string.to_i
     end
 
+    def self.all()
+        sql = "SELECT * FROM artists"
+        artists_hashes = SqlRunner.run(sql)
+        artists = artists_hashes.map { |artist| Artist.new(artist)}
+        return artists
+    end
+
     def self.delete_all()
         sql = "DELETE FROM artists"
         SqlRunner.run(sql)
